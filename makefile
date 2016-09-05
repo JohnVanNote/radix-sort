@@ -1,3 +1,8 @@
+# makefile
+#
+# John Van Note
+#
+
 sort :
 	python radix.py
 run : 
