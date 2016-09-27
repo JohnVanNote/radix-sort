@@ -2,13 +2,17 @@
 #
 # radix.py
 #
+# John Van Note
+# Updated 2016-09-26
+#
+#
 #
 
 import sys
 
 # Main sorting function sorted by Least Significant Digit
-# num_list is an unordered list of integers
-# returns a list of ordered integers
+# @param num_list is an unordered list of integers
+# @return a list of ordered integers
 def radixSort(num_list):
   if len(num_list) == 0:
     return
@@ -27,9 +31,9 @@ def radixSort(num_list):
   return oneList( buckets )
 
 # This function is used if a value has more than one significant digit
-# buckets is a list of list of buckets from the previous significant digit
-# digit is the significant digit for the numbers to be sorted at
-# returns a new list of list or buckets
+# @param buckets is a list of list of buckets from the previous significant digit
+# @param digit is the significant digit for the numbers to be sorted at
+# @return a new list of list or buckets
 def advRadixSort(buckets, digit):
   tens = pow( 10, digit )
   more_buckets = makeBuckets(10)
@@ -43,6 +47,8 @@ def advRadixSort(buckets, digit):
   return more_buckets
   
 # Finds the largest significant digit in a list of integers
+# @param num_list is a list of integers
+# @return the largest digit by place
 def largestDigit(num_list):
   max_val = largestValue(num_list)
   count = 0
@@ -53,21 +59,29 @@ def largestDigit(num_list):
   return count
  
 # Finds the max value in a list of integers
+# @param num_list is a list of integers
+# @return the max value in a list
 def largestValue(num_list):
   return max(i for i in num_list)
  
 # creates buckets
+# @param num is the number of lists to create inside a list
+# @return a list of *num* lists
 def makeBuckets(num):
   return [[] for i in range(num)]
 
 # Makes a list of integers from input string
+# @param input_string is a strings consisting of digits separated by spaces
+# @return a list of integers represented by the string
 def makeUnorderedList(input_string):
   unordered_list = []
   for i in input_string.strip().split(' '):
     unordered_list.append(int(i))   
   return unordered_list
 
-# Takes a list of list and makes it into one list
+# Takes a list of lists and makes it into one list
+# @param listOfList is a list of lists
+# @return one list
 def oneList(listOfList):
   one_list = []
   for i in listOfList:
@@ -84,5 +98,6 @@ def main():
   for i in sorted_list:
     print i
 
+# 
 if __name__ == "__main__":
   main()
