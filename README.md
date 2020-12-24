@@ -1,7 +1,9 @@
+# Radix Sort
+
 There should be 3 files included in addition to this README:
-- radix.py
-- makefile
-- example.input
+* radix.py
+* makefile
+* example.input
 
 
 radix.py is a simple implementation of a radix sort algorithm such that the user provides it input in the form of integers seperated by a whitespace and the algorithm will return the same list of integers sorted least the greatest.
