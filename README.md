@@ -1,5 +1,7 @@
 # Radix Sort
 
+This is super old from college, its probably garbage.
+
 There should be 3 files included in addition to this README:
 * radix.py
 * makefile
